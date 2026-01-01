@@ -45,26 +45,18 @@
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        /* Hover Glow for Cards */
+        /* 25 Degree Positive Rotation on Hover */
         .service-card {
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
             perspective: 1000px;
+            transform-style: preserve-3d;
         }
 
         .service-card:hover {
             border-color: var(--brand-color);
-            transform: translateY(-8px);
-            box-shadow: 0 10px 40px -10px var(--brand-glow);
-        }
-
-        /* Pricing Tag Rotation on Hover */
-        .price-tag {
-            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-            display: inline-block;
-        }
-
-        .service-card:hover .price-tag {
-            transform: rotateY(360deg);
+            transform: translateY(-10px) rotate(25deg);
+            box-shadow: 0 20px 50px -15px var(--brand-glow);
+            z-index: 10;
         }
 
         /* Background Glow Effects */
@@ -105,70 +97,70 @@
     </nav>
 
     <section id="services" class="pt-48 pb-20 px-6 max-w-6xl mx-auto">
-        <div class="text-center mb-20">
+        <div class="text-center mb-24">
             <div class="flex justify-center mb-6">
                 <img src="https://i.ibb.co/C3Ym8vX/Velour-Logo.png" alt="Velour Icon" class="h-28 w-auto">
             </div>
-            <h1 class="text-6xl md:text-8xl font-extrabold mb-4 gradient-text tracking-tighter uppercase">Velour</h1>
+            <h1 class="text-6xl md:text-8xl font-extrabold mb-4 gradient-text tracking-tighter">Velour</h1>
             <p class="text-gray-400 text-sm max-w-lg mx-auto leading-relaxed">
                 Elevated custom assets for the community. <br>
                 <span class="italic opacity-60">Handcrafted quality. Professional delivery.</span>
             </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
             <div class="glass p-8 rounded-3xl service-card border-white/5">
                 <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center mb-6 border border-white/10 text-2xl">👕</div>
-                <h3 class="font-bold text-xl mb-4">Clothing</h3>
+                <h3 class="font-bold text-xl mb-4 text-white">Clothing</h3>
                 <div class="space-y-3">
-                    <div class="flex justify-between items-center"><span class="text-gray-400">Top</span> <span class="price-tag bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">50 R$</span></div>
-                    <div class="flex justify-between items-center"><span class="text-gray-400">Bottoms</span> <span class="price-tag bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">50 R$</span></div>
-                    <div class="flex justify-between items-center text-[#b96a7c] font-bold"><span class="text-gray-400">Full Set</span> <span class="price-tag">100 R$</span></div>
+                    <div class="flex justify-between items-center"><span class="text-gray-400">Top</span> <span class="bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">50 R$</span></div>
+                    <div class="flex justify-between items-center"><span class="text-gray-400">Bottoms</span> <span class="bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">50 R$</span></div>
+                    <div class="flex justify-between items-center text-[#b96a7c] font-bold"><span class="text-gray-400">Full Set</span> <span>100 R$</span></div>
                 </div>
             </div>
 
             <div class="glass p-8 rounded-3xl service-card border-white/5">
                 <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center mb-6 border border-white/10 text-2xl">🚔</div>
-                <h3 class="font-bold text-xl mb-4">Liveries</h3>
+                <h3 class="font-bold text-xl mb-4 text-white">Liveries</h3>
                 <div class="space-y-3">
-                    <div class="flex justify-between items-center"><span class="text-gray-400">Staff</span> <span class="price-tag bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">130+ R$</span></div>
-                    <div class="flex justify-between items-center"><span class="text-gray-400">LEO</span> <span class="price-tag bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">120+ R$</span></div>
+                    <div class="flex justify-between items-center"><span class="text-gray-400">Staff</span> <span class="bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">130+ R$</span></div>
+                    <div class="flex justify-between items-center"><span class="text-gray-400">LEO</span> <span class="bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">120+ R$</span></div>
                 </div>
             </div>
 
             <div class="glass p-8 rounded-3xl service-card border-white/5">
                 <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center mb-6 border border-white/10 text-2xl">🤖</div>
-                <h3 class="font-bold text-xl mb-4">Discord Bots</h3>
+                <h3 class="font-bold text-xl mb-4 text-white">Discord Bots</h3>
                 <div class="space-y-3">
-                    <div class="flex justify-between items-center"><span class="text-gray-400">Basic</span> <span class="price-tag bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">500 R$</span></div>
-                    <div class="flex justify-between items-center"><span class="text-gray-400">Advanced</span> <span class="price-tag bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">1000 R$</span></div>
+                    <div class="flex justify-between items-center"><span class="text-gray-400">Basic</span> <span class="bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">500 R$</span></div>
+                    <div class="flex justify-between items-center"><span class="text-gray-400">Advanced</span> <span class="bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">1000 R$</span></div>
                 </div>
             </div>
 
             <div class="glass p-8 rounded-3xl service-card border-white/5">
                 <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center mb-6 border border-white/10 text-2xl">💬</div>
-                <h3 class="font-bold text-xl mb-4">Discord Setup</h3>
+                <h3 class="font-bold text-xl mb-4 text-white">Discord Setup</h3>
                 <div class="space-y-3">
-                    <div class="flex justify-between items-center"><span class="text-gray-400">Basic</span> <span class="price-tag bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">200 R$</span></div>
-                    <div class="flex justify-between items-center"><span class="text-gray-400">Advanced</span> <span class="price-tag bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">250 R$</span></div>
+                    <div class="flex justify-between items-center"><span class="text-gray-400">Basic</span> <span class="bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">200 R$</span></div>
+                    <div class="flex justify-between items-center"><span class="text-gray-400">Advanced</span> <span class="bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">250 R$</span></div>
                 </div>
             </div>
 
             <div class="glass p-8 rounded-3xl service-card border-white/5">
                 <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center mb-6 border border-white/10 text-2xl">📷</div>
-                <h3 class="font-bold text-xl mb-4">Photography</h3>
+                <h3 class="font-bold text-xl mb-4 text-white">Photography</h3>
                 <div class="space-y-3">
-                    <div class="flex justify-between items-center"><span class="text-gray-400">Basic</span> <span class="price-tag bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">75 R$</span></div>
-                    <div class="flex justify-between items-center"><span class="text-gray-400">Advanced</span> <span class="price-tag bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">100 R$</span></div>
+                    <div class="flex justify-between items-center"><span class="text-gray-400">Basic</span> <span class="bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">75 R$</span></div>
+                    <div class="flex justify-between items-center"><span class="text-gray-400">Advanced</span> <span class="bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">100 R$</span></div>
                 </div>
             </div>
 
             <div class="glass p-8 rounded-3xl service-card border-white/5">
                 <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center mb-6 border border-white/10 text-2xl">🎨</div>
-                <h3 class="font-bold text-xl mb-4">Graphics</h3>
+                <h3 class="font-bold text-xl mb-4 text-white">Graphics</h3>
                 <div class="space-y-3">
-                    <div class="flex justify-between items-center"><span class="text-gray-400">Logos</span> <span class="price-tag bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">150+ R$</span></div>
-                    <div class="flex justify-between items-center"><span class="text-gray-400">Banners</span> <span class="price-tag bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">115+ R$</span></div>
+                    <div class="flex justify-between items-center"><span class="text-gray-400">Logos</span> <span class="bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">150+ R$</span></div>
+                    <div class="flex justify-between items-center"><span class="text-gray-400">Banners</span> <span class="bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">115+ R$</span></div>
                 </div>
             </div>
         </div>
@@ -182,11 +174,11 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                 <div>
-                    <h4 class="text-white font-bold mb-3 flex items-center gap-2">Refunds</h4>
+                    <h4 class="text-white font-bold mb-3">Refunds</h4>
                     <p class="text-gray-400 text-xs leading-relaxed">All payments are final. Velour only issues store credit in exceptional cases.</p>
                 </div>
                 <div>
-                    <h4 class="text-white font-bold mb-3 flex items-center gap-2">Property</h4>
+                    <h4 class="text-white font-bold mb-3">Property</h4>
                     <p class="text-gray-400 text-xs leading-relaxed">Reselling or distribution of purchased assets is strictly prohibited.</p>
                 </div>
             </div>
