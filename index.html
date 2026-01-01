@@ -3,183 +3,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Velour</title>
+    <title>Velour | Customs</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --brand-color: #b96a7c;
+            --brand-glow: rgba(185, 106, 124, 0.3);
         }
+
+        * {
+            font-family: 'Poppins', sans-serif !important;
+        }
+
         body {
-            font-family: 'Poppins', sans-serif;
-            /* Background pattern styled after image_7e7d40.png */
-            background-color: #0a0a0a;
+            background-color: #050505;
             background-image: 
-                linear-gradient(to right, #1a1a1a 1px, transparent 1px),
-                linear-gradient(to bottom, #1a1a1a 1px, transparent 1px);
+                linear-gradient(to right, #121212 1px, transparent 1px),
+                linear-gradient(to bottom, #121212 1px, transparent 1px);
             background-size: 40px 40px;
             color: white;
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
-        .text-brand { color: var(--brand-color); }
-        .bg-brand { background-color: var(--brand-color); }
-        .border-brand { border-color: var(--brand-color); }
-        
-        /* Glassmorphism for header and cards */
+
+        /* Gradient Title */
+        .gradient-text {
+            background: linear-gradient(to bottom, #ffffff, var(--brand-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Glassmorphism */
         .glass {
-            background: rgba(15, 15, 15, 0.8);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(15, 15, 15, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
+
+        /* Modern Hover Glow Effect */
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
         .service-card:hover {
             border-color: var(--brand-color);
-            transform: translateY(-5px);
-            transition: all 0.3s ease;
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px -10px var(--brand-glow);
+        }
+
+        /* Soft Glow Orbs */
+        .glow-orb {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: var(--brand-color);
+            filter: blur(120px);
+            opacity: 0.15;
+            z-index: -1;
+            border-radius: 50%;
+        }
+
+        .btn-glow:hover {
+            box-shadow: 0 0 20px var(--brand-glow);
         }
     </style>
 </head>
 <body class="antialiased">
 
-    <nav class="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-5xl glass rounded-full px-6 py-3 flex items-center justify-between z-50">
-        <div class="flex items-center gap-2">
+    <div class="glow-orb top-20 left-1/4"></div>
+    <div class="glow-orb bottom-20 right-1/4"></div>
+
+    <nav class="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-5xl glass rounded-2xl px-6 py-4 flex items-center justify-between z-50">
+        <div class="flex items-center">
             <img src="https://i.ibb.co/C3Ym8vX/Velour-Logo.png" alt="Velour Logo" class="h-8 w-auto">
         </div>
         
-        <div class="flex items-center gap-8">
-            <a href="#services" class="text-sm font-medium hover:text-brand transition">Services</a>
-            <a href="#terms" class="text-sm font-medium hover:text-brand transition">Terms</a>
-            <a href="#" class="text-sm font-medium hover:text-brand transition">Contact</a>
-            <a href="https://discord.gg/eDqeKUQufR" target="_blank" class="bg-white/10 hover:bg-brand text-white px-5 py-2 rounded-full text-sm font-semibold flex items-center gap-2 transition">
-                Join Server <span>&rsaquo;</span>
+        <div class="hidden md:flex items-center gap-8">
+            <a href="#services" class="text-sm font-medium hover:text-brand transition text-gray-300">Services</a>
+            <a href="#terms" class="text-sm font-medium hover:text-brand transition text-gray-300">Terms</a>
+            <a href="https://discord.gg/eDqeKUQufR" target="_blank" class="bg-white text-black hover:bg-[#b96a7c] hover:text-white px-6 py-2 rounded-xl text-sm font-bold transition-all duration-300 btn-glow">
+                Join Server
             </a>
         </div>
     </nav>
 
-    <section id="services" class="pt-40 pb-20 px-6 max-w-6xl mx-auto">
-        <div class="text-center mb-16">
-            <h1 class="text-4xl font-bold mb-2">Velour Services & Prices</h1>
-            <p class="text-gray-400 text-sm italic">All prices are listed in Robux. A "+" means the price may increase based on complexity.</p>
+    <section id="services" class="pt-48 pb-20 px-6 max-w-6xl mx-auto">
+        <div class="text-center mb-20">
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-4 gradient-text tracking-tight">Velour Services</h1>
+            <p class="text-gray-400 text-sm max-w-lg mx-auto leading-relaxed">
+                Premium custom assets for your community. <br>
+                <span class="italic opacity-70">Prices are in Robux and may vary by complexity.</span>
+            </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="glass p-6 rounded-2xl service-card border-white/5">
-                <div class="flex items-center gap-3 mb-4">
-                    <span class="text-brand text-xl">👕</span>
-                    <h3 class="font-bold text-lg">Clothing</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="glass p-8 rounded-3xl service-card">
+                <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center mb-6 border border-white/10">
+                    <span class="text-2xl">👕</span>
                 </div>
-                <ul class="space-y-2 text-gray-300">
-                    <li class="flex justify-between"><span>Top:</span> <span class="font-mono">50 R$</span></li>
-                    <li class="flex justify-between"><span>Bottoms:</span> <span class="font-mono">50 R$</span></li>
-                    <li class="flex justify-between"><span>Full set:</span> <span class="font-mono">100 R$</span></li>
-                </ul>
+                <h3 class="font-bold text-xl mb-4">Clothing</h3>
+                <div class="space-y-3">
+                    <div class="flex justify-between items-center"><span class="text-gray-400">Top</span> <span class="bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">50 R$</span></div>
+                    <div class="flex justify-between items-center"><span class="text-gray-400">Bottoms</span> <span class="bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">50 R$</span></div>
+                    <div class="flex justify-between items-center text-[#b96a7c] font-bold"><span class="text-gray-400">Full Set</span> <span>100 R$</span></div>
+                </div>
             </div>
 
-            <div class="glass p-6 rounded-2xl service-card border-white/5">
-                <div class="flex items-center gap-3 mb-4">
-                    <span class="text-brand text-xl">🚔</span>
-                    <h3 class="font-bold text-lg">Liveries</h3>
+            <div class="glass p-8 rounded-3xl service-card">
+                <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center mb-6 border border-white/10">
+                    <span class="text-2xl">🚔</span>
                 </div>
-                <ul class="space-y-2 text-gray-300">
-                    <li class="flex justify-between"><span>Staff:</span> <span class="font-mono">130+ R$</span></li>
-                    <li class="flex justify-between"><span>LEO:</span> <span class="font-mono">120+ R$</span></li>
-                    <li class="flex justify-between text-gray-500 italic text-sm">Other: Varies</li>
-                </ul>
+                <h3 class="font-bold text-xl mb-4">Liveries</h3>
+                <div class="space-y-3">
+                    <div class="flex justify-between items-center"><span class="text-gray-400">Staff</span> <span class="bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">130+ R$</span></div>
+                    <div class="flex justify-between items-center"><span class="text-gray-400">LEO</span> <span class="bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">120+ R$</span></div>
+                    <p class="text-xs text-gray-500 italic mt-2">Other designs vary by request.</p>
+                </div>
             </div>
 
-            <div class="glass p-6 rounded-2xl service-card border-white/5">
-                <div class="flex items-center gap-3 mb-4">
-                    <span class="text-brand text-xl">🤖</span>
-                    <h3 class="font-bold text-lg">Discord Bots</h3>
+            <div class="glass p-8 rounded-3xl service-card">
+                <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center mb-6 border border-white/10">
+                    <span class="text-2xl">🤖</span>
                 </div>
-                <ul class="space-y-2 text-gray-300">
-                    <li class="flex justify-between"><span>Basic:</span> <span class="font-mono">500 R$</span></li>
-                    <li class="flex justify-between"><span>Advanced:</span> <span class="font-mono">1000 R$</span></li>
-                    <li class="flex justify-between text-gray-500 italic text-sm">Other: Varies</li>
-                </ul>
+                <h3 class="font-bold text-xl mb-4">Discord Bots</h3>
+                <div class="space-y-3">
+                    <div class="flex justify-between items-center"><span class="text-gray-400">Basic</span> <span class="bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">500 R$</span></div>
+                    <div class="flex justify-between items-center"><span class="text-gray-400">Advanced</span> <span class="bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">1000 R$</span></div>
+                </div>
             </div>
 
-            <div class="glass p-6 rounded-2xl service-card border-white/5">
-                <div class="flex items-center gap-3 mb-4">
-                    <span class="text-brand text-xl">💬</span>
-                    <h3 class="font-bold text-lg">Discord Setup</h3>
+            <div class="glass p-8 rounded-3xl service-card">
+                <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center mb-6 border border-white/10">
+                    <span class="text-2xl">💬</span>
                 </div>
-                <ul class="space-y-2 text-gray-300">
-                    <li class="flex justify-between"><span>Basic setup:</span> <span class="font-mono">200 R$</span></li>
-                    <li class="flex justify-between"><span>Advanced:</span> <span class="font-mono">250 R$</span></li>
-                </ul>
+                <h3 class="font-bold text-xl mb-4">Discord Setup</h3>
+                <div class="space-y-3">
+                    <div class="flex justify-between items-center"><span class="text-gray-400">Basic</span> <span class="bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">200 R$</span></div>
+                    <div class="flex justify-between items-center"><span class="text-gray-400">Advanced</span> <span class="bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">250 R$</span></div>
+                </div>
             </div>
 
-            <div class="glass p-6 rounded-2xl service-card border-white/5">
-                <div class="flex items-center gap-3 mb-4">
-                    <span class="text-brand text-xl">📷</span>
-                    <h3 class="font-bold text-lg">Photography</h3>
+            <div class="glass p-8 rounded-3xl service-card">
+                <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center mb-6 border border-white/10">
+                    <span class="text-2xl">📷</span>
                 </div>
-                <ul class="space-y-2 text-gray-300">
-                    <li class="flex justify-between"><span>Basic package:</span> <span class="font-mono">75 R$</span></li>
-                    <li class="flex justify-between"><span>Advanced:</span> <span class="font-mono">100 R$</span></li>
-                </ul>
+                <h3 class="font-bold text-xl mb-4">Photography</h3>
+                <div class="space-y-3">
+                    <div class="flex justify-between items-center"><span class="text-gray-400">Basic</span> <span class="bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">75 R$</span></div>
+                    <div class="flex justify-between items-center"><span class="text-gray-400">Advanced</span> <span class="bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">100 R$</span></div>
+                </div>
             </div>
 
-            <div class="glass p-6 rounded-2xl service-card border-white/5">
-                <div class="flex items-center gap-3 mb-4">
-                    <span class="text-brand text-xl">🎨</span>
-                    <h3 class="font-bold text-lg">Graphics</h3>
+            <div class="glass p-8 rounded-3xl service-card">
+                <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center mb-6 border border-white/10">
+                    <span class="text-2xl">🎨</span>
                 </div>
-                <ul class="space-y-2 text-gray-300">
-                    <li class="flex justify-between"><span>Logos:</span> <span class="font-mono">150+ R$</span></li>
-                    <li class="flex justify-between"><span>Banners:</span> <span class="font-mono">115+ R$</span></li>
-                </ul>
+                <h3 class="font-bold text-xl mb-4">Graphics</h3>
+                <div class="space-y-3">
+                    <div class="flex justify-between items-center"><span class="text-gray-400">Logos</span> <span class="bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">150+ R$</span></div>
+                    <div class="flex justify-between items-center"><span class="text-gray-400">Banners</span> <span class="bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">115+ R$</span></div>
+                </div>
             </div>
         </div>
 
-        <div class="mt-12 text-center">
-            <a href="https://discord.gg/eDqeKUQufR" class="bg-brand text-white px-10 py-4 rounded-full font-bold hover:scale-105 transition-transform inline-block">
-                Order Today &rsaquo;
+        <div class="mt-16 text-center">
+            <a href="https://discord.gg/eDqeKUQufR" class="bg-[#b96a7c] text-white px-12 py-4 rounded-2xl font-bold hover:scale-105 hover:brightness-110 transition-all duration-300 inline-block btn-glow shadow-lg shadow-[#b96a7c]/20">
+                Start Your Order &rsaquo;
             </a>
         </div>
     </section>
 
     <section id="terms" class="py-20 px-6 max-w-4xl mx-auto">
-        <div class="glass rounded-3xl p-8 border-white/5">
-            <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
-                <span class="text-brand">Terms</span> of Service
+        <div class="glass rounded-[2rem] p-10 border-white/5 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-[#b96a7c] opacity-5 blur-[80px]"></div>
+            <h2 class="text-3xl font-bold mb-10 tracking-tight">
+                <span class="text-[#b96a7c]">Terms</span> of Service
             </h2>
             
-            <div class="space-y-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
-                    <h4 class="text-brand font-bold mb-2">Accepting Terms</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed">By ordering or claiming a product from us, you agree to these terms and are bound by them. If you do not agree, please refrain from ordering or claiming our packages.</p>
+                    <h4 class="text-white font-bold mb-2 flex items-center gap-2">
+                        <div class="w-1.5 h-1.5 rounded-full bg-[#b96a7c]"></div> Refunds
+                    </h4>
+                    <p class="text-gray-400 text-xs leading-relaxed">All payments are final. In extreme cases, store credit may be issued at Velour management's discretion.</p>
                 </div>
 
                 <div>
-                    <h4 class="text-brand font-bold mb-2">Refunds</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed">All payments are final and non-refundable. In the rare case a designer scams you, we may issue store credits at our discretion.</p>
+                    <h4 class="text-white font-bold mb-2 flex items-center gap-2">
+                        <div class="w-1.5 h-1.5 rounded-full bg-[#b96a7c]"></div> Property
+                    </h4>
+                    <p class="text-gray-400 text-xs leading-relaxed">All assets are copyrighted. Redistribution or reselling without explicit permission is strictly prohibited.</p>
                 </div>
 
                 <div>
-                    <h4 class="text-brand font-bold mb-2">Property</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed">All products purchased from Velour are protected by copyright. You may not distribute, share, or resell any content from us without explicit permission.</p>
+                    <h4 class="text-white font-bold mb-2 flex items-center gap-2">
+                        <div class="w-1.5 h-1.5 rounded-full bg-[#b96a7c]"></div> Payments
+                    </h4>
+                    <p class="text-gray-400 text-xs leading-relaxed">Full payment is required upfront. Work will only commence once the transaction is verified.</p>
                 </div>
 
                 <div>
-                    <h4 class="text-brand font-bold mb-2">Payments</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed">Payment is required upfront once you and the designer agree on a price. Orders will not proceed without full payment.</p>
-                </div>
-
-                <div>
-                    <h4 class="text-brand font-bold mb-2">Designer Conduct</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed">Our designers will deliver work professionally and on time. Any failure to meet deadlines or quality standards should be reported.</p>
-                </div>
-
-                <div class="pt-6 border-t border-white/10">
-                    <p class="text-xs text-gray-500">For further questions, please join our Discord and open a support ticket.</p>
+                    <h4 class="text-white font-bold mb-2 flex items-center gap-2">
+                        <div class="w-1.5 h-1.5 rounded-full bg-[#b96a7c]"></div> Conduct
+                    </h4>
+                    <p class="text-gray-400 text-xs leading-relaxed">Our designers guarantee professional delivery. Reports can be filed for missed deadlines.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-10 text-center text-gray-600 text-xs">
-        &copy; 2026 Velour. All rights reserved.
+    <footer class="py-12 text-center">
+        <p class="text-gray-600 text-xs tracking-widest uppercase">&copy; 2026 VELOUR CUSTOMS • ALL RIGHTS RESERVED</p>
     </footer>
 
 </body>
