@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Velour</title>
+    <link rel="icon" type="image/png" href="https://media.discordapp.net/attachments/1451989401461592126/1456430450020188413/fb907e95-97c3-42a8-8b3a-bfbca11b953f.png?ex=6958560e&is=6957048e&hm=78647cbfd57dbf78850cf98277cd585716445aa5f431bf2c2f5d9d327d89d811&=&format=webp&quality=lossless&width=540&height=489">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -12,7 +13,6 @@
             --brand-glow: rgba(185, 106, 124, 0.3);
         }
 
-        /* Force Poppins on everything */
         * {
             font-family: 'Poppins', sans-serif !important;
         }
@@ -31,33 +31,28 @@
             overflow-x: hidden;
         }
 
-        /* Gradient Title Text */
         .gradient-text {
             background: linear-gradient(to bottom, #ffffff, var(--brand-color));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        /* Glassmorphism Effect */
         .glass {
             background: rgba(15, 15, 15, 0.7);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        /* Modern Hover Glow */
         .service-card {
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
         }
 
         .service-card:hover {
             border-color: var(--brand-color);
             transform: translateY(-8px);
-            box-shadow: 0 10px 30px -10px var(--brand-glow);
+            box-shadow: 0 10px 40px -10px var(--brand-glow);
         }
 
-        /* Background Glow Orbs */
         .glow-orb {
             position: absolute;
             width: 400px;
@@ -72,6 +67,16 @@
         .btn-glow:hover {
             box-shadow: 0 0 20px var(--brand-glow);
         }
+
+        /* Spinning/Floating animation for the icon */
+        .float-icon {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -80,8 +85,9 @@
     <div class="glow-orb bottom-0 right-1/4"></div>
 
     <nav class="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-5xl glass rounded-2xl px-6 py-4 flex items-center justify-between z-50">
-        <div class="flex items-center">
-            <img src="https://i.ibb.co/C3Ym8vX/Velour-Logo.png" alt="Velour Logo" class="h-8 w-auto">
+        <div class="flex items-center gap-3">
+            <img src="https://i.ibb.co/C3Ym8vX/Velour-Logo.png" alt="Velour Icon" class="h-10 w-auto">
+            <span class="font-bold tracking-tighter text-xl hidden sm:block">VELOUR</span>
         </div>
         
         <div class="flex items-center gap-6 md:gap-10">
@@ -95,15 +101,18 @@
 
     <section id="services" class="pt-48 pb-20 px-6 max-w-6xl mx-auto">
         <div class="text-center mb-20">
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-4 gradient-text tracking-tight uppercase">Velour</h1>
+            <div class="flex justify-center mb-6">
+                <img src="https://i.ibb.co/C3Ym8vX/Velour-Logo.png" alt="Velour Icon" class="h-24 w-auto float-icon">
+            </div>
+            <h1 class="text-6xl md:text-8xl font-extrabold mb-4 gradient-text tracking-tighter uppercase">Velour</h1>
             <p class="text-gray-400 text-sm max-w-lg mx-auto leading-relaxed">
-                Premium custom assets for your community. <br>
-                <span class="italic opacity-60">Robux only. Prices may increase based on complexity.</span>
+                Elevated custom assets for the community. <br>
+                <span class="italic opacity-60">Handcrafted quality. Professional delivery.</span>
             </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="glass p-8 rounded-3xl service-card">
+            <div class="glass p-8 rounded-3xl service-card border-white/5">
                 <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center mb-6 border border-white/10 text-2xl">👕</div>
                 <h3 class="font-bold text-xl mb-4">Clothing</h3>
                 <div class="space-y-3">
@@ -113,17 +122,16 @@
                 </div>
             </div>
 
-            <div class="glass p-8 rounded-3xl service-card">
+            <div class="glass p-8 rounded-3xl service-card border-white/5">
                 <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center mb-6 border border-white/10 text-2xl">🚔</div>
                 <h3 class="font-bold text-xl mb-4">Liveries</h3>
                 <div class="space-y-3">
                     <div class="flex justify-between items-center"><span class="text-gray-400">Staff</span> <span class="bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">130+ R$</span></div>
                     <div class="flex justify-between items-center"><span class="text-gray-400">LEO</span> <span class="bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">120+ R$</span></div>
-                    <p class="text-[10px] text-gray-500 italic mt-2 uppercase tracking-widest">Custom Quotes Available</p>
                 </div>
             </div>
 
-            <div class="glass p-8 rounded-3xl service-card">
+            <div class="glass p-8 rounded-3xl service-card border-white/5">
                 <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center mb-6 border border-white/10 text-2xl">🤖</div>
                 <h3 class="font-bold text-xl mb-4">Discord Bots</h3>
                 <div class="space-y-3">
@@ -131,76 +139,32 @@
                     <div class="flex justify-between items-center"><span class="text-gray-400">Advanced</span> <span class="bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">1000 R$</span></div>
                 </div>
             </div>
-
-            <div class="glass p-8 rounded-3xl service-card">
-                <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center mb-6 border border-white/10 text-2xl">💬</div>
-                <h3 class="font-bold text-xl mb-4">Discord Setup</h3>
-                <div class="space-y-3">
-                    <div class="flex justify-between items-center"><span class="text-gray-400">Basic</span> <span class="bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">200 R$</span></div>
-                    <div class="flex justify-between items-center"><span class="text-gray-400">Advanced</span> <span class="bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">250 R$</span></div>
-                </div>
+            
             </div>
-
-            <div class="glass p-8 rounded-3xl service-card">
-                <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center mb-6 border border-white/10 text-2xl">📷</div>
-                <h3 class="font-bold text-xl mb-4">Photography</h3>
-                <div class="space-y-3">
-                    <div class="flex justify-between items-center"><span class="text-gray-400">Basic</span> <span class="bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">75 R$</span></div>
-                    <div class="flex justify-between items-center"><span class="text-gray-400">Advanced</span> <span class="bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">100 R$</span></div>
-                </div>
-            </div>
-
-            <div class="glass p-8 rounded-3xl service-card">
-                <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center mb-6 border border-white/10 text-2xl">🎨</div>
-                <h3 class="font-bold text-xl mb-4">Graphics</h3>
-                <div class="space-y-3">
-                    <div class="flex justify-between items-center"><span class="text-gray-400">Logos</span> <span class="bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">150+ R$</span></div>
-                    <div class="flex justify-between items-center"><span class="text-gray-400">Banners</span> <span class="bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">115+ R$</span></div>
-                </div>
-            </div>
-        </div>
     </section>
 
     <section id="terms" class="py-32 px-6 max-w-4xl mx-auto">
         <div class="glass rounded-[2.5rem] p-10 md:p-14 border-white/5 relative overflow-hidden">
-            <h2 class="text-3xl font-bold mb-10 tracking-tight">
+            <h2 class="text-3xl font-bold mb-10 tracking-tight text-center">
                 <span class="text-[#b96a7c]">Terms</span> of Service
             </h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                 <div>
-                    <h4 class="text-white font-bold mb-3 flex items-center gap-2">
-                        <div class="w-1.5 h-1.5 rounded-full bg-[#b96a7c]"></div> Refunds
-                    </h4>
-                    <p class="text-gray-400 text-xs leading-relaxed">All payments are final. Velour only issues store credit in exceptional cases where delivery is impossible.</p>
+                    <h4 class="text-white font-bold mb-3 flex items-center gap-2">Refunds</h4>
+                    <p class="text-gray-400 text-xs leading-relaxed">All payments are final. Velour only issues store credit in exceptional cases.</p>
                 </div>
-
                 <div>
-                    <h4 class="text-white font-bold mb-3 flex items-center gap-2">
-                        <div class="w-1.5 h-1.5 rounded-full bg-[#b96a7c]"></div> Property
-                    </h4>
-                    <p class="text-gray-400 text-xs leading-relaxed">Assets remain the property of Velour until purchased. Reselling or distribution is strictly prohibited.</p>
-                </div>
-
-                <div>
-                    <h4 class="text-white font-bold mb-3 flex items-center gap-2">
-                        <div class="w-1.5 h-1.5 rounded-full bg-[#b96a7c]"></div> Payments
-                    </h4>
-                    <p class="text-gray-400 text-xs leading-relaxed">Full upfront payment is mandatory. No work will begin until funds are confirmed.</p>
-                </div>
-
-                <div>
-                    <h4 class="text-white font-bold mb-3 flex items-center gap-2">
-                        <div class="w-1.5 h-1.5 rounded-full bg-[#b96a7c]"></div> Conduct
-                    </h4>
-                    <p class="text-gray-400 text-xs leading-relaxed">Velour designers promise professional communication and timely delivery. Tickets are open for support.</p>
+                    <h4 class="text-white font-bold mb-3 flex items-center gap-2">Property</h4>
+                    <p class="text-gray-400 text-xs leading-relaxed">Reselling or distribution of purchased assets is strictly prohibited.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-16 text-center border-t border-white/5">
-        <p class="text-gray-600 text-[10px] tracking-[0.3em] uppercase">&copy; 2026 VELOUR • PREMIUM CUSTOMS</p>
+    <footer class="py-16 text-center flex flex-col items-center gap-4">
+        <img src="https://i.ibb.co/C3Ym8vX/Velour-Logo.png" alt="Velour Logo" class="h-8 w-auto opacity-40">
+        <p class="text-gray-600 text-[10px] tracking-[0.3em] uppercase">&copy; 2026 VELOUR • ALL RIGHTS RESERVED</p>
     </footer>
 
 </body>
