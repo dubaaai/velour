@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velour</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-color: #b96a7c;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            /* Background pattern styled after image_7e7d40.png */
+            background-color: #0a0a0a;
+            background-image: 
+                linear-gradient(to right, #1a1a1a 1px, transparent 1px),
+                linear-gradient(to bottom, #1a1a1a 1px, transparent 1px);
+            background-size: 40px 40px;
+            color: white;
+            scroll-behavior: smooth;
+        }
+        .text-brand { color: var(--brand-color); }
+        .bg-brand { background-color: var(--brand-color); }
+        .border-brand { border-color: var(--brand-color); }
+        
+        /* Glassmorphism for header and cards */
+        .glass {
+            background: rgba(15, 15, 15, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .service-card:hover {
+            border-color: var(--brand-color);
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-5xl glass rounded-full px-6 py-3 flex items-center justify-between z-50">
+        <div class="flex items-center gap-2">
+            <img src="https://i.ibb.co/C3Ym8vX/Velour-Logo.png" alt="Velour Logo" class="h-8 w-auto">
+        </div>
+        
+        <div class="flex items-center gap-8">
+            <a href="#services" class="text-sm font-medium hover:text-brand transition">Services</a>
+            <a href="#terms" class="text-sm font-medium hover:text-brand transition">Terms</a>
+            <a href="#" class="text-sm font-medium hover:text-brand transition">Contact</a>
+            <a href="https://discord.gg/eDqeKUQufR" target="_blank" class="bg-white/10 hover:bg-brand text-white px-5 py-2 rounded-full text-sm font-semibold flex items-center gap-2 transition">
+                Join Server <span>&rsaquo;</span>
+            </a>
+        </div>
+    </nav>
+
+    <section id="services" class="pt-40 pb-20 px-6 max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl font-bold mb-2">Velour Services & Prices</h1>
+            <p class="text-gray-400 text-sm italic">All prices are listed in Robux. A "+" means the price may increase based on complexity.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="glass p-6 rounded-2xl service-card border-white/5">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="text-brand text-xl">👕</span>
+                    <h3 class="font-bold text-lg">Clothing</h3>
+                </div>
+                <ul class="space-y-2 text-gray-300">
+                    <li class="flex justify-between"><span>Top:</span> <span class="font-mono">50 R$</span></li>
+                    <li class="flex justify-between"><span>Bottoms:</span> <span class="font-mono">50 R$</span></li>
+                    <li class="flex justify-between"><span>Full set:</span> <span class="font-mono">100 R$</span></li>
+                </ul>
+            </div>
+
+            <div class="glass p-6 rounded-2xl service-card border-white/5">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="text-brand text-xl">🚔</span>
+                    <h3 class="font-bold text-lg">Liveries</h3>
+                </div>
+                <ul class="space-y-2 text-gray-300">
+                    <li class="flex justify-between"><span>Staff:</span> <span class="font-mono">130+ R$</span></li>
+                    <li class="flex justify-between"><span>LEO:</span> <span class="font-mono">120+ R$</span></li>
+                    <li class="flex justify-between text-gray-500 italic text-sm">Other: Varies</li>
+                </ul>
+            </div>
+
+            <div class="glass p-6 rounded-2xl service-card border-white/5">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="text-brand text-xl">🤖</span>
+                    <h3 class="font-bold text-lg">Discord Bots</h3>
+                </div>
+                <ul class="space-y-2 text-gray-300">
+                    <li class="flex justify-between"><span>Basic:</span> <span class="font-mono">500 R$</span></li>
+                    <li class="flex justify-between"><span>Advanced:</span> <span class="font-mono">1000 R$</span></li>
+                    <li class="flex justify-between text-gray-500 italic text-sm">Other: Varies</li>
+                </ul>
+            </div>
+
+            <div class="glass p-6 rounded-2xl service-card border-white/5">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="text-brand text-xl">💬</span>
+                    <h3 class="font-bold text-lg">Discord Setup</h3>
+                </div>
+                <ul class="space-y-2 text-gray-300">
+                    <li class="flex justify-between"><span>Basic setup:</span> <span class="font-mono">200 R$</span></li>
+                    <li class="flex justify-between"><span>Advanced:</span> <span class="font-mono">250 R$</span></li>
+                </ul>
+            </div>
+
+            <div class="glass p-6 rounded-2xl service-card border-white/5">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="text-brand text-xl">📷</span>
+                    <h3 class="font-bold text-lg">Photography</h3>
+                </div>
+                <ul class="space-y-2 text-gray-300">
+                    <li class="flex justify-between"><span>Basic package:</span> <span class="font-mono">75 R$</span></li>
+                    <li class="flex justify-between"><span>Advanced:</span> <span class="font-mono">100 R$</span></li>
+                </ul>
+            </div>
+
+            <div class="glass p-6 rounded-2xl service-card border-white/5">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="text-brand text-xl">🎨</span>
+                    <h3 class="font-bold text-lg">Graphics</h3>
+                </div>
+                <ul class="space-y-2 text-gray-300">
+                    <li class="flex justify-between"><span>Logos:</span> <span class="font-mono">150+ R$</span></li>
+                    <li class="flex justify-between"><span>Banners:</span> <span class="font-mono">115+ R$</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-12 text-center">
+            <a href="https://discord.gg/eDqeKUQufR" class="bg-brand text-white px-10 py-4 rounded-full font-bold hover:scale-105 transition-transform inline-block">
+                Order Today &rsaquo;
+            </a>
+        </div>
+    </section>
+
+    <section id="terms" class="py-20 px-6 max-w-4xl mx-auto">
+        <div class="glass rounded-3xl p-8 border-white/5">
+            <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
+                <span class="text-brand">Terms</span> of Service
+            </h2>
+            
+            <div class="space-y-8">
+                <div>
+                    <h4 class="text-brand font-bold mb-2">Accepting Terms</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">By ordering or claiming a product from us, you agree to these terms and are bound by them. If you do not agree, please refrain from ordering or claiming our packages.</p>
+                </div>
+
+                <div>
+                    <h4 class="text-brand font-bold mb-2">Refunds</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">All payments are final and non-refundable. In the rare case a designer scams you, we may issue store credits at our discretion.</p>
+                </div>
+
+                <div>
+                    <h4 class="text-brand font-bold mb-2">Property</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">All products purchased from Velour are protected by copyright. You may not distribute, share, or resell any content from us without explicit permission.</p>
+                </div>
+
+                <div>
+                    <h4 class="text-brand font-bold mb-2">Payments</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Payment is required upfront once you and the designer agree on a price. Orders will not proceed without full payment.</p>
+                </div>
+
+                <div>
+                    <h4 class="text-brand font-bold mb-2">Designer Conduct</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Our designers will deliver work professionally and on time. Any failure to meet deadlines or quality standards should be reported.</p>
+                </div>
+
+                <div class="pt-6 border-t border-white/10">
+                    <p class="text-xs text-gray-500">For further questions, please join our Discord and open a support ticket.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center text-gray-600 text-xs">
+        &copy; 2026 Velour. All rights reserved.
+    </footer>
+
+</body>
+</html>
