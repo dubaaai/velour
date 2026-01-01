@@ -12,8 +12,13 @@
             --brand-glow: rgba(185, 106, 124, 0.3);
         }
 
+        /* Force Poppins on everything */
         * {
             font-family: 'Poppins', sans-serif !important;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -23,29 +28,27 @@
                 linear-gradient(to bottom, #121212 1px, transparent 1px);
             background-size: 40px 40px;
             color: white;
-            scroll-behavior: smooth;
             overflow-x: hidden;
         }
 
-        /* Gradient Title */
+        /* Gradient Title Text */
         .gradient-text {
             background: linear-gradient(to bottom, #ffffff, var(--brand-color));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        /* Glassmorphism */
+        /* Glassmorphism Effect */
         .glass {
             background: rgba(15, 15, 15, 0.7);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        /* Modern Hover Glow Effect */
+        /* Modern Hover Glow */
         .service-card {
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
-            overflow: hidden;
         }
 
         .service-card:hover {
@@ -54,14 +57,14 @@
             box-shadow: 0 10px 30px -10px var(--brand-glow);
         }
 
-        /* Soft Glow Orbs */
+        /* Background Glow Orbs */
         .glow-orb {
             position: absolute;
-            width: 300px;
-            height: 300px;
+            width: 400px;
+            height: 400px;
             background: var(--brand-color);
-            filter: blur(120px);
-            opacity: 0.15;
+            filter: blur(150px);
+            opacity: 0.12;
             z-index: -1;
             border-radius: 50%;
         }
@@ -73,18 +76,18 @@
 </head>
 <body class="antialiased">
 
-    <div class="glow-orb top-20 left-1/4"></div>
-    <div class="glow-orb bottom-20 right-1/4"></div>
+    <div class="glow-orb top-0 left-1/4"></div>
+    <div class="glow-orb bottom-0 right-1/4"></div>
 
     <nav class="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-5xl glass rounded-2xl px-6 py-4 flex items-center justify-between z-50">
         <div class="flex items-center">
             <img src="https://i.ibb.co/C3Ym8vX/Velour-Logo.png" alt="Velour Logo" class="h-8 w-auto">
         </div>
         
-        <div class="hidden md:flex items-center gap-8">
+        <div class="flex items-center gap-6 md:gap-10">
             <a href="#services" class="text-sm font-medium hover:text-brand transition text-gray-300">Services</a>
             <a href="#terms" class="text-sm font-medium hover:text-brand transition text-gray-300">Terms</a>
-            <a href="https://discord.gg/eDqeKUQufR" target="_blank" class="bg-white text-black hover:bg-[#b96a7c] hover:text-white px-6 py-2 rounded-xl text-sm font-bold transition-all duration-300 btn-glow">
+            <a href="https://discord.gg/eDqeKUQufR" target="_blank" class="bg-white text-black hover:bg-[#b96a7c] hover:text-white px-5 py-2 rounded-xl text-sm font-bold transition-all duration-300 btn-glow">
                 Join Server
             </a>
         </div>
@@ -92,18 +95,16 @@
 
     <section id="services" class="pt-48 pb-20 px-6 max-w-6xl mx-auto">
         <div class="text-center mb-20">
-            <h1 class="text-5xl md:text-6xl font-extrabold mb-4 gradient-text tracking-tight">Velour Services</h1>
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-4 gradient-text tracking-tight uppercase">Velour</h1>
             <p class="text-gray-400 text-sm max-w-lg mx-auto leading-relaxed">
                 Premium custom assets for your community. <br>
-                <span class="italic opacity-70">Prices are in Robux and may vary by complexity.</span>
+                <span class="italic opacity-60">Robux only. Prices may increase based on complexity.</span>
             </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div class="glass p-8 rounded-3xl service-card">
-                <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center mb-6 border border-white/10">
-                    <span class="text-2xl">👕</span>
-                </div>
+                <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center mb-6 border border-white/10 text-2xl">👕</div>
                 <h3 class="font-bold text-xl mb-4">Clothing</h3>
                 <div class="space-y-3">
                     <div class="flex justify-between items-center"><span class="text-gray-400">Top</span> <span class="bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">50 R$</span></div>
@@ -113,21 +114,17 @@
             </div>
 
             <div class="glass p-8 rounded-3xl service-card">
-                <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center mb-6 border border-white/10">
-                    <span class="text-2xl">🚔</span>
-                </div>
+                <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center mb-6 border border-white/10 text-2xl">🚔</div>
                 <h3 class="font-bold text-xl mb-4">Liveries</h3>
                 <div class="space-y-3">
                     <div class="flex justify-between items-center"><span class="text-gray-400">Staff</span> <span class="bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">130+ R$</span></div>
                     <div class="flex justify-between items-center"><span class="text-gray-400">LEO</span> <span class="bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">120+ R$</span></div>
-                    <p class="text-xs text-gray-500 italic mt-2">Other designs vary by request.</p>
+                    <p class="text-[10px] text-gray-500 italic mt-2 uppercase tracking-widest">Custom Quotes Available</p>
                 </div>
             </div>
 
             <div class="glass p-8 rounded-3xl service-card">
-                <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center mb-6 border border-white/10">
-                    <span class="text-2xl">🤖</span>
-                </div>
+                <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center mb-6 border border-white/10 text-2xl">🤖</div>
                 <h3 class="font-bold text-xl mb-4">Discord Bots</h3>
                 <div class="space-y-3">
                     <div class="flex justify-between items-center"><span class="text-gray-400">Basic</span> <span class="bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">500 R$</span></div>
@@ -136,9 +133,7 @@
             </div>
 
             <div class="glass p-8 rounded-3xl service-card">
-                <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center mb-6 border border-white/10">
-                    <span class="text-2xl">💬</span>
-                </div>
+                <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center mb-6 border border-white/10 text-2xl">💬</div>
                 <h3 class="font-bold text-xl mb-4">Discord Setup</h3>
                 <div class="space-y-3">
                     <div class="flex justify-between items-center"><span class="text-gray-400">Basic</span> <span class="bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">200 R$</span></div>
@@ -147,9 +142,7 @@
             </div>
 
             <div class="glass p-8 rounded-3xl service-card">
-                <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center mb-6 border border-white/10">
-                    <span class="text-2xl">📷</span>
-                </div>
+                <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center mb-6 border border-white/10 text-2xl">📷</div>
                 <h3 class="font-bold text-xl mb-4">Photography</h3>
                 <div class="space-y-3">
                     <div class="flex justify-between items-center"><span class="text-gray-400">Basic</span> <span class="bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">75 R$</span></div>
@@ -158,9 +151,7 @@
             </div>
 
             <div class="glass p-8 rounded-3xl service-card">
-                <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center mb-6 border border-white/10">
-                    <span class="text-2xl">🎨</span>
-                </div>
+                <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center mb-6 border border-white/10 text-2xl">🎨</div>
                 <h3 class="font-bold text-xl mb-4">Graphics</h3>
                 <div class="space-y-3">
                     <div class="flex justify-between items-center"><span class="text-gray-400">Logos</span> <span class="bg-white/5 px-3 py-1 rounded-lg text-sm font-semibold">150+ R$</span></div>
@@ -168,55 +159,48 @@
                 </div>
             </div>
         </div>
-
-        <div class="mt-16 text-center">
-            <a href="https://discord.gg/eDqeKUQufR" class="bg-[#b96a7c] text-white px-12 py-4 rounded-2xl font-bold hover:scale-105 hover:brightness-110 transition-all duration-300 inline-block btn-glow shadow-lg shadow-[#b96a7c]/20">
-                Start Your Order &rsaquo;
-            </a>
-        </div>
     </section>
 
-    <section id="terms" class="py-20 px-6 max-w-4xl mx-auto">
-        <div class="glass rounded-[2rem] p-10 border-white/5 relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-32 h-32 bg-[#b96a7c] opacity-5 blur-[80px]"></div>
+    <section id="terms" class="py-32 px-6 max-w-4xl mx-auto">
+        <div class="glass rounded-[2.5rem] p-10 md:p-14 border-white/5 relative overflow-hidden">
             <h2 class="text-3xl font-bold mb-10 tracking-tight">
                 <span class="text-[#b96a7c]">Terms</span> of Service
             </h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                 <div>
-                    <h4 class="text-white font-bold mb-2 flex items-center gap-2">
+                    <h4 class="text-white font-bold mb-3 flex items-center gap-2">
                         <div class="w-1.5 h-1.5 rounded-full bg-[#b96a7c]"></div> Refunds
                     </h4>
-                    <p class="text-gray-400 text-xs leading-relaxed">All payments are final. In extreme cases, store credit may be issued at Velour management's discretion.</p>
+                    <p class="text-gray-400 text-xs leading-relaxed">All payments are final. Velour only issues store credit in exceptional cases where delivery is impossible.</p>
                 </div>
 
                 <div>
-                    <h4 class="text-white font-bold mb-2 flex items-center gap-2">
+                    <h4 class="text-white font-bold mb-3 flex items-center gap-2">
                         <div class="w-1.5 h-1.5 rounded-full bg-[#b96a7c]"></div> Property
                     </h4>
-                    <p class="text-gray-400 text-xs leading-relaxed">All assets are copyrighted. Redistribution or reselling without explicit permission is strictly prohibited.</p>
+                    <p class="text-gray-400 text-xs leading-relaxed">Assets remain the property of Velour until purchased. Reselling or distribution is strictly prohibited.</p>
                 </div>
 
                 <div>
-                    <h4 class="text-white font-bold mb-2 flex items-center gap-2">
+                    <h4 class="text-white font-bold mb-3 flex items-center gap-2">
                         <div class="w-1.5 h-1.5 rounded-full bg-[#b96a7c]"></div> Payments
                     </h4>
-                    <p class="text-gray-400 text-xs leading-relaxed">Full payment is required upfront. Work will only commence once the transaction is verified.</p>
+                    <p class="text-gray-400 text-xs leading-relaxed">Full upfront payment is mandatory. No work will begin until funds are confirmed.</p>
                 </div>
 
                 <div>
-                    <h4 class="text-white font-bold mb-2 flex items-center gap-2">
+                    <h4 class="text-white font-bold mb-3 flex items-center gap-2">
                         <div class="w-1.5 h-1.5 rounded-full bg-[#b96a7c]"></div> Conduct
                     </h4>
-                    <p class="text-gray-400 text-xs leading-relaxed">Our designers guarantee professional delivery. Reports can be filed for missed deadlines.</p>
+                    <p class="text-gray-400 text-xs leading-relaxed">Velour designers promise professional communication and timely delivery. Tickets are open for support.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-12 text-center">
-        <p class="text-gray-600 text-xs tracking-widest uppercase">&copy; 2026 VELOUR CUSTOMS • ALL RIGHTS RESERVED</p>
+    <footer class="py-16 text-center border-t border-white/5">
+        <p class="text-gray-600 text-[10px] tracking-[0.3em] uppercase">&copy; 2026 VELOUR • PREMIUM CUSTOMS</p>
     </footer>
 
 </body>
